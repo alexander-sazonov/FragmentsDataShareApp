@@ -12,14 +12,14 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
-        setContentView(binding.getRoot());
-        if (savedInstanceState != null) {
+        //ActivityMainBinding binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(R.layout.activity_main);
+        if (savedInstanceState == null){
             getSupportFragmentManager().beginTransaction()
-                    .setReorderingAllowed(true)
                     .add(R.id.container, InfoFragment.class, null)
-                    .addToBackStack("info_fragment")
                     .commit();
         }
+
+
     }
 }
